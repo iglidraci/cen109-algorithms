@@ -18,7 +18,7 @@ int main() {
         count++;
     }
     cout<<"sum of your numbers is "<<sum<<endl;
-    if (n > 0) {
+    if (n != 0) {
         // this means that I can now calculate the average
         // don't forget (float), otherwise you will get an integer result
         float avg = (float)sum/n;
