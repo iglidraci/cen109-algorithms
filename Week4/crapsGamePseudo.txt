@@ -1,0 +1,68 @@
+Craps game
+A player rolls two die.
+Calculate the sum of the spots on the upword faces.
+If the sum is 7 or 11 on the first throw, the player wins.
+If the sum is 2, 3 or 12 on first throw the player loses.
+If the sum is 4, 5, 6, 8, 9 or 10 on the first throw then that sum becomes player's point
+To win continue rolling the dice until you "make your points"
+The player loses by rolling 7 before making the points.
+
+
+*ALGORITHM CrapsGame
+CONTINUE = 1
+WON = 2
+LOST = 3
+points
+// ThrowDice() is a black box for the moment
+// you just know for sure that ThrowDice will throw two die and give you the sum
+// basically will give you a number between 2 and 12
+sum = ThrowDice()
+currentStatus = CONTINUE
+if sum == 7 or sum == 11
+    currentStatus = WON
+else if sum == 2 or sum == 3 or sum == 12
+    currentStatus = LOST
+else
+    points = sum
+    print "You have " + points + " points"
+
+while currentStatus == CONTINUE
+    sum = ThrowDice()
+    if sum == points
+        currentStatus = WON
+    else if sum == 7
+        currentStatus = LOST
+
+if currentStatus == WON
+    print "You won the game"
+else
+    print "You lost the game"
+
+
+// let us have a look at how to build ThrowDice black box
+
+*ALGORITHM ThrowDice
+// again imagine ThrowDie() as a black box that just thorws a die
+// you know for sure that ThrowDie() will give you a number between 1 and 6
+firstThrow = ThrowDie()
+secondThrow = ThrowDie()
+total = firstThrow + secondThrow
+print "You got " + total
+return total
+
+
+// let us look at how to build ThrowDie()
+
+*ALGORITHM ThrowDie
+// rand() is a function built in C/C++ that gives us random numbers
+// throwing a die is the same thing, you get random numbers between 1 and 6
+// now rand() gives us random numbers between 0 and a very big number (doesn't matter how big)
+// we need to transform rand() function to give us random numbers between 1 and 6
+// if we get rand() % 6, we are sure that the number is between 0 and 5
+// if we add 1 to rand()%6, we are sure the number is between 1 and 6
+throwDie = 1 + (rand() % 6)
+return throwDie
+
+
+**IMPORTANT
+Try to build the flowchart of this pseudocode
