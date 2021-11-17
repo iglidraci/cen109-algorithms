@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -6,6 +7,7 @@ void printArray(int[], int);
 double getMean(int[], int);
 void setFrequencies(int[], int, int[]);
 void printFrequencies(int[], int);
+double getSTD(int[], int);
 
 int main() {
     // we know for sure that we have numbers between 1 and 9
@@ -44,7 +46,20 @@ int main() {
     printFrequencies(frequencies, 9);
     // get the STD of data
     // sqrt(sum(pow(abs(x-mean), 2))/n)
+    double std = getSTD(data, size);
+    cout<<"STD of data: "<<std<<endl;
     return 0;
+}
+
+double getSTD(int array[], int size) {
+    double mean = getMean(array, size);
+    double sum = 0;
+    for (int i = 0; i < size; i++)
+    {
+        sum += pow(abs(array[i] - mean), 2);
+    }
+    double std = sqrt(sum)/size;
+    return std;
 }
 
 void printArray(int array[], int size) {
@@ -76,7 +91,12 @@ void printFrequencies(int freq[], int size) {
     for (int i = 0; i < size; i++)
     {
         if (freq[i] != 0) {
-            cout<<"Element "<<i+1<<" was found "<<freq[i] << " times"<<endl;
+            cout<<"Element "<<i+1<<": ";
+            for (int j = 0; j < freq[i]; j++)
+            {
+                cout<<"*";
+            }
+            cout<<endl;
         }
     }
     
