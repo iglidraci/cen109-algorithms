@@ -1,10 +1,25 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
+
 int main() {
     const int EURO_TO_LEK = 123;
+    const int SIZE = 20;
     // we have an array with bank movements in euro
-    int movements[] = {100, -50, 40, 100, -20, 200, -30, 400, -100};
+    // int movements[] = {100, -50, 40, 100, -20, 200, -30, 400, -100};
+    // srand(time(NULL));
+    int movements[SIZE];
+    for (int i = 0; i < SIZE; i++)
+    {
+        // random numbers between -3 and 3
+        int randomNumber = rand()%7 - 3;
+        movements[i] =  randomNumber;
+        cout<<randomNumber<<" ";
+    }
+    cout<<endl;
+    
     int totalDeposit = 0;
     int totalWithdraw = 0;
     int maxDeposit = movements[0];

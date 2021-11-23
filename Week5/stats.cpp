@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -15,6 +17,8 @@ int main() {
     // numbers between 1 and 9 will be generated randomly
     // we have to calculate the mean, frequencies for each element,
     // and standard deviation
+    cout<<time(NULL)<<endl;
+    srand(time(NULL));
     cout << "How many numbers do you want to process: ";
     int size;
     cin>>size;

@@ -101,4 +101,51 @@ for i from 1 -> N:
     print<<endl;
 
 
-**Find mean, frequencies and STD from an array of random numbers from 1 to 9
+* We have an array A of int values (size of array is large N)
+We know for sure that each element in the array is between 1 and 9
+We are going to find the frequencies for each element in the array A
+then we are going to print frequencies of each element using '*'
+For example
+Element 3: *****
+Element 5: **************
+Element 6: ***
+Element 8: ***********
+
+6) Algorithm FindFrequencies
+// Declare new array called Frequencies[9] with 9 elements
+// the index of each element will serve as the number
+// value of the array at a specific index will serve as frequence
+// for example if A = {1, 2, 1, 1, 2, 3, 8, 9, 2, 1}
+// then Frequencies = {4, 3, 0, 0, 0, 0, 0, 1, 1}
+// the first element of Frequencies is 4 which means
+// Number 1 was found 4 times in the array A
+Start
+Frequencies[9]
+for i from 1 -> N:
+    Frequencies[A[i]]++
+// print the histogram now
+for i from 1 -> 9:
+    if Frequencies[i] != 0:
+        print << "Element "<<i<<" :"
+        for j from 1 -> Frequencies[i]:
+            print<<'*';
+        print<<endl;
+
+
+
+** STD from an array of int
+the formula for STD is sqrt(Variance)
+variance is average of squared differences from the mean
+STD = sqrt(sum(pow(abs(x-mean), 2))/n)
+
+7) Algorithm STD
+A[1 ... N]
+// suppose that we have a function that returns us the mean in an array
+mean = getMean(A)
+sum = 0
+for i from 1 -> N:
+    sum += (A[i] - mean) * (A[i] - mean)
+variance = sum / N
+// suppose we have a function that returns us the sqrt of a value
+std = sqrt(variance)
+print<<"Standard deviation is " << std <<endl
