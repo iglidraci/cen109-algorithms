@@ -9,7 +9,7 @@ int main() {
     const int SIZE = 20;
     // we have an array with bank movements in euro
     // int movements[] = {100, -50, 40, 100, -20, 200, -30, 400, -100};
-    // srand(time(NULL));
+    srand(time(NULL));
     int movements[SIZE];
     for (int i = 0; i < SIZE; i++)
     {
