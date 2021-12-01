@@ -24,11 +24,7 @@ int main() {
     int totalWithdraw = 0;
     int maxDeposit = movements[0];
     int maxWithdraw = movements[0];
-    // get the size of array
-    // we already know the size of the array, we can easily count them one by one
-    // sizeof operator gives the size of the 
-    int size = sizeof(movements)/sizeof(int);
-    for(int i=0; i<size; i++) {
+    for(int i=0; i<SIZE; i++) {
         if (movements[i] > 0) {
             totalDeposit += movements[i];
             if (movements[i] > maxDeposit)
