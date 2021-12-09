@@ -9,7 +9,7 @@ int main (void)
 { // beginning of main
 
 
-	int arrayOfIntegers[N] = {0, 2, 7, 99, 55, 44, 23, 17, 19, 1}; 
+	int arrayOfIntegers[N] = {0, 2, 7, 99, 55, 44, 23, 17, 19, 1};
 	
 	int searchItem;
 
