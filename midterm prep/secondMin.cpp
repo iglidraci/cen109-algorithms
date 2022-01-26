@@ -19,26 +19,34 @@ int main() {
     {
         array[i] = rand() % 20;
     }
-    cout << "Array values are: ";
-    printArray(array, SIZE);
-    int secMin = getSecondMin(array, SIZE);
-    cout << "Second minimum value is " << secMin <<endl;
+    int a, b = INT_MAX;
+    for (int i = 0; i < SIZE; i++)
+    {
+        if (array[i] < a) {
+            b = a;
+            a = array[i];
+        }
+            
+        else if (array[i] < b)
+            b = array[i];
+    }
+    cout << b <<endl;
     return 0;
 }
 
 int getSecondMin(int array[], int size) {
-    int smallest, secondSmallest = INT_MAX;
+    int a, b = INT_MAX;
     for (int i = 0; i < size; i++)
     {
-        if (array[i] < smallest) {
-            secondSmallest = smallest;
-            smallest = array[i];
+        if (array[i] < a) {
+            b = a;
+            a = array[i];
         }
             
-        else if (array[i] < secondSmallest)
-            secondSmallest = array[i];
+        else if (array[i] < b)
+            b = array[i];
     }
-    return secondSmallest;
+    return b;
 }
 
 void printArray(int array[], int size) {
