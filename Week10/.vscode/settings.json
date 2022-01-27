@@ -6,6 +6,7 @@
         "memory": "cpp",
         "string": "cpp",
         "type_traits": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "ostream": "cpp"
     }
 }
